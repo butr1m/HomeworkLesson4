@@ -25,11 +25,18 @@ public class HomeworkLesson4 {
         rectangle3.printRectangleKind();
         System.out.println();
 
+
         if (((rectangle1.x == rectangle2.x) && (rectangle1.y == rectangle2.y)) || ((rectangle1.x == rectangle2.y) && (rectangle1.y == rectangle2.x))) {
-            System.out.println("Прямоугольники равны?" + true);
+            System.out.println("Прямоугольники равны? " + true);
         } else {
-            System.out.println("Прямоугольники равны?" + false);
+            System.out.println("Прямоугольники равны? " + false);
         }
+
+        System.out.println();
+        Rectangle.printRectanglesCount();
+
+        System.out.println();
+        Rectangle.printClassName(true);
 
     }
 }
@@ -37,6 +44,10 @@ public class HomeworkLesson4 {
 class Rectangle {
     double x;
     double y;
+
+    static private int createdRectangles;
+    static private final String RUSSIAN_CLASS_NAME = "Прямоугольник!";
+    static private final String ENGLISH_CLASS_NAME = "Rectangle!";
 
     double calculateArea() {
         double calculatArea = x * y;
@@ -60,16 +71,28 @@ class Rectangle {
             System.out.println("Это квадрат!");
         } else {
             System.out.println("Это прямоугольник!");
+            createdRectangles++;
         }
     }
 
-    void isTheSameRectangle() {
-        boolean rectangle = false;
-        if (x == y) {
-            System.out.println("Прямоугольники равны!" + rectangle);
+//    void isTheSameRectangle() {
+//            boolean Rectangle=true;
+//        if (Rectangle) {
+//            System.out.println("Прямоугольники равны!" );      ??
+//        } else {
+//            System.out.println("Прямоугольники не равны!");
+//        }
+//    }
+
+    public static void printRectanglesCount() {
+        System.out.println("Всего было создано " + createdRectangles + " прямоугольника!");
+    }
+
+    public static void printClassName(boolean printlnRussian) {
+        if (printlnRussian) {
+            System.out.println(RUSSIAN_CLASS_NAME);
         } else {
-            System.out.println("Прямоугольник не равны!" + rectangle);
+            System.out.println(ENGLISH_CLASS_NAME);
         }
     }
-
 }

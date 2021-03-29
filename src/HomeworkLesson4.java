@@ -2,8 +2,8 @@ public class HomeworkLesson4 {
     public static void main(String[] args) {
 
         Rectangle rectangle1 = new Rectangle();
-        rectangle1.x = 10;
-        rectangle1.y = 12;
+        rectangle1.x = 12;
+        rectangle1.y = 10;
         rectangle1.calculateArea();
         rectangle1.printArea();
         rectangle1.printRectangleKind();
@@ -26,11 +26,8 @@ public class HomeworkLesson4 {
         System.out.println();
 
 
-        if (((rectangle1.x == rectangle2.x) && (rectangle1.y == rectangle2.y)) || ((rectangle1.x == rectangle2.y) && (rectangle1.y == rectangle2.x))) {
-            System.out.println("Прямоугольники равны? " + true);
-        } else {
-            System.out.println("Прямоугольники равны? " + false);
-        }
+        System.out.println(rectangle1.isTheSameRectangle(rectangle2));
+
 
         System.out.println();
         Rectangle.printRectanglesCount();
@@ -55,6 +52,7 @@ class Rectangle {
     }
 
     void kwadrat() {
+
         y = x;
     }
 
@@ -75,14 +73,12 @@ class Rectangle {
         }
     }
 
-//    void isTheSameRectangle() {
-//            boolean Rectangle=true;
-//        if (Rectangle) {
-//            System.out.println("Прямоугольники равны!" );      ??
-//        } else {
-//            System.out.println("Прямоугольники не равны!");
-//        }
-//    }
+    boolean isTheSameRectangle(Rectangle rectangle) {
+        System.out.println("Прямоугольники равны?");
+
+        return this.x == (rectangle.x) &&
+                this.y == (rectangle.y);
+   }
 
     public static void printRectanglesCount() {
         System.out.println("Всего было создано " + createdRectangles + " прямоугольника!");

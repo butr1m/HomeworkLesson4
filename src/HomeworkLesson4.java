@@ -75,7 +75,6 @@ class Rectangle {
 
     boolean isTheSameRectangle(Rectangle rectangle) {
         System.out.println("Прямоугольники равны?");
-
         return this.x == (rectangle.x) &&
                 this.y == (rectangle.y);
    }

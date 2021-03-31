@@ -6,16 +6,20 @@ class Rectangle {
     static private final String RUSSIAN_CLASS_NAME = "Прямоугольник!";
     static private final String ENGLISH_CLASS_NAME = "Rectangle!";
 
+    public Rectangle(double x, double y){
+        this.x=x;
+        this.y=y;
+    }
+
+    public Rectangle(double x){
+        this.x=x;
+        y=x;
+    }
+
     double calculateArea() {
         double calculatArea = x * y;
         return calculatArea;
     }
-
-    void kwadrat() {
-
-        y = x;
-    }
-
     void printArea() {
         if (x == y) {
             System.out.println("Площадь квадрата равна: " + calculateArea());
